@@ -1,0 +1,192 @@
+{
+  "student_metadata": {
+    "name": "Shivansh Gupta",
+    "roll_number": "230054",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part A",
+    "submission_date": "2026-03-01"
+  },
+
+  "llm_tools_used": [
+    {
+      "tool_name": "Claude",
+      "model": "Claude Opus 4",
+      "provider": "Anthropic"
+    }
+  ],
+
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "date": "2026-03-01",
+      "tool_name": "Claude",
+      "model": "Claude Opus 4",
+      "purpose": "Evaluating AAAI 2010 GMM paper against assignment requirements",
+      "prompt": "I found a paper titled 'Gaussian Mixture Model with Local Consistency' from AAAI 2010 by Jialu Liu, Deng Cai, and Xiaofei He. Can you analyze whether this paper satisfies the requirements for my AML mid-semester exam? The requirements state that the paper must be from a CORE A* venue (2009-2012), and the primary contribution must be based on ARIMA, GMM, or SVM methods.",
+      "llm_response_used": "Yes",
+      "how_it_helped": "The LLM systematically checked each requirement: confirmed AAAI is in the allowed venue list, verified 2010 is within the year range, and identified the method as GMM with EM-based clustering which satisfies the method alignment requirement.",
+      "student_verification": "Cross-referenced the allowed venues list in MidSem_PartA.pdf and confirmed AAAI is explicitly listed under 'General AI: AAAI, IJCAI'. Verified GMM is an allowed method category.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 2,
+      "date": "2026-03-01",
+      "tool_name": "Claude",
+      "model": "Claude Opus 4",
+      "purpose": "Understanding the core technical contribution of LCGMM paper",
+      "prompt": "Can you explain the main technical contribution of the LCGMM paper? Specifically, I want to understand: (1) What problem does it solve that standard GMM cannot? (2) What is the mathematical formulation of the regularization term? (3) How does it use the k-NN graph structure?",
+      "llm_response_used": "Yes",
+      "how_it_helped": "Clarified that LCGMM addresses the limitation of standard GMM which ignores manifold structure in data. The regularization term uses KL-divergence to enforce that neighboring points (in k-NN graph) have similar posterior probability distributions over clusters.",
+      "student_verification": "Will read Section 3 of the actual paper to verify the mathematical formulation: L' = L_GMM - λR where R is the smoothness term based on KL-divergence.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 3,
+      "date": "2026-03-01",
+      "tool_name": "Claude",
+      "model": "Claude Opus 4",
+      "purpose": "Checking if VLDB venue qualifies for the assignment",
+      "prompt": "I found another paper from VLDB 2010 (Proceedings of the VLDB Endowment, Vol 3). The assignment lists allowed venues as 'KDD, ICDM, ICDE' for data mining. Does VLDB qualify as an allowed venue even though it's a CORE A* database conference?",
+      "llm_response_used": "Yes",
+      "how_it_helped": "The LLM correctly identified that VLDB is NOT in the explicitly allowed venue list. The assignment only allows KDD, ICDM, and ICDE for data mining/databases category. This taught me that being CORE A* is necessary but not sufficient - the venue must be explicitly listed.",
+      "student_verification": "Re-read the 'Publication Venue (Strict)' section in MidSem_PartA.pdf and confirmed VLDB is not mentioned in any allowed category.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 4,
+      "date": "2026-03-01",
+      "tool_name": "Claude",
+      "model": "Claude Opus 4",
+      "purpose": "Evaluating NeurIPS 2011 FGM paper for method alignment",
+      "prompt": "I'm considering 'Group Anomaly Detection using Flexible Genre Models' from NeurIPS 2011. It uses Monte Carlo EM for learning. Does using EM algorithm automatically satisfy the 'GMM, EM-based clustering' requirement, or does the model need to be specifically GMM-based?",
+      "llm_response_used": "Yes",
+      "how_it_helped": "The LLM clarified an important distinction: FGM is based on topic models (LDA family) which use Dirichlet-Multinomial distributions, not Gaussian distributions. While it uses EM for inference, the 'EM-based clustering' requirement in the assignment likely refers to GMM variants specifically. This paper is borderline/risky.",
+      "student_verification": "Understood the distinction between probabilistic model families. Topic models and GMMs are both mixture models but use different distributions. The assignment wording 'GMM, EM-based clustering, or variants' suggests GMM-family methods.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 5,
+      "date": "2026-03-01",
+      "tool_name": "Claude",
+      "model": "Claude Opus 4",
+      "purpose": "Verifying if the example paper from assignment can be selected",
+      "prompt": "The assignment provides 'Object Detection with Discriminatively Trained Part-Based Models' (PAMI 2010) as an example of a good paper selection. Is there any rule in the assignment that prohibits students from selecting the example paper itself? What are the risks of selecting it?",
+      "llm_response_used": "Yes",
+      "how_it_helped": "The LLM analyzed the full assignment PDF and confirmed there is no explicit prohibition against selecting the example paper. However, it highlighted the first-come-first-serve uniqueness rule as a significant risk - since this is the example paper, many students will likely attempt to select it.",
+      "student_verification": "Searched the assignment PDF for any restrictions on example papers. Found only the uniqueness constraint: 'Duplicate selections are NOT allowed' and 'first-come, first-select process'.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 6,
+      "date": "2026-03-01",
+      "tool_name": "Claude",
+      "model": "Claude Opus 4",
+      "purpose": "Verifying venue and year of PU Learning paper",
+      "prompt": "I found a paper on 'Positive Unlabeled Learning for Time Series Classification' that I thought was from ICML 2010. Can you verify the actual venue and year, and check if it qualifies? The paper uses SVM iteratively for classification.",
+      "llm_response_used": "Yes",
+      "how_it_helped": "The LLM corrected my assumption - the paper is actually from IJCAI 2011, not ICML 2010. This was important because incorrect venue/year information would invalidate my submission. It also noted that while SVM is used, the primary contribution is the LCLC clustering algorithm, with SVM being a component rather than the core method.",
+      "student_verification": "Verified by checking the paper PDF header which clearly states 'Proceedings of the Twenty-Second International Joint Conference on Artificial Intelligence' (IJCAI 2011).",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 7,
+      "date": "2026-03-01",
+      "tool_name": "Claude",
+      "model": "Claude Opus 4",
+      "purpose": "Finding papers with strong reproducibility (available code)",
+      "prompt": "For better reproducibility in Parts B and C, I want to find papers from the allowed venues (2009-2012) that have official code implementations available. Can you search for SVM or GMM papers with code repositories? I prefer papers where the method can be run on CPU without GPU requirements.",
+      "llm_response_used": "Yes",
+      "how_it_helped": "The LLM provided a curated list of papers with code: (1) Latent Structural SVM (ICML 2009) with official C code from Cornell + Python via PyStruct, (2) DPM Object Detection (PAMI 2010) with MATLAB code, (3) Multiple Kernel Learning papers with MKLpy library. This directly addressed my reproducibility concerns.",
+      "student_verification": "Verified code availability by visiting https://www.cs.cornell.edu/~cnyu/latentssvm/ - confirmed downloadable tar.gz files with source code and documentation.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 8,
+      "date": "2026-03-01",
+      "tool_name": "Claude",
+      "model": "Claude Opus 4",
+      "purpose": "Detailed analysis of Latent Structural SVM paper",
+      "prompt": "For the paper 'Learning Structural SVMs with Latent Variables' (ICML 2009, Yu & Joachims), can you explain: (1) What makes it 'latent' compared to standard structural SVM? (2) What optimization algorithm does it use? (3) What are the application domains demonstrated in the paper?",
+      "llm_response_used": "Yes",
+      "how_it_helped": "Learned that the latent variables allow modeling hidden structure not observed during training. The paper uses the Concave-Convex Procedure (CCCP) for optimization. Applications include discriminative motif finding, noun phrase coreference resolution, and precision@k optimization - all provided as separate code packages.",
+      "student_verification": "Will read the paper's Section 2 (formulation) and Section 4 (experiments) to understand CCCP and applications in detail for Part C.",
+      "confidence_level": 4
+    },
+    {
+      "interaction_id": 9,
+      "date": "2026-03-01",
+      "tool_name": "Claude",
+      "model": "Claude Opus 4",
+      "purpose": "Final paper selection and feasibility assessment",
+      "prompt": "I want to finalize my selection as 'Learning Structural SVMs with Latent Variables' (ICML 2009). Can you confirm: (1) It satisfies all mandatory requirements, (2) The datasets used are publicly available, (3) The experiments can be reproduced on a standard laptop without GPU, (4) What are potential failure cases I should understand for Part C?",
+      "llm_response_used": "Yes",
+      "how_it_helped": "Confirmed all requirements are satisfied. The paper uses publicly available datasets for motif finding and coreference. Experiments are CPU-based C code. Potential failure cases include: sensitivity to initialization, convergence to local optima in CCCP, and the quality of latent variable inference affecting final predictions.",
+      "student_verification": "Decision made based on: (1) ICML is explicitly allowed, (2) SVM satisfies method requirement, (3) Official code ensures reproducibility, (4) CPU-only requirement met.",
+      "confidence_level": 5
+    },
+    {
+      "interaction_id": 10,
+      "date": "2026-03-01",
+      "tool_name": "Claude",
+      "model": "Claude Opus 4",
+      "purpose": "Setting up code and dataset for reproduction",
+      "prompt": "Help me download the official Latent SSVM code from Cornell and find a suitable dataset for experimentation. I need something that works with the provided code or can be used with a Python implementation.",
+      "llm_response_used": "Yes",
+      "how_it_helped": "Downloaded three code packages (latentssvm API, motif finding, coreference resolution) from Cornell. Also downloaded Stanford OCR dataset (52K letters, 6.8K words) which is ideal for structured prediction. Created a Python data loader script for preprocessing.",
+      "student_verification": "Verified downloads by extracting archives and checking README files. Tested data loader script - successfully loaded 6,877 words with 52,152 letters.",
+      "confidence_level": 5
+    }
+  ],
+
+  "top_5_prompts": [
+    {
+      "rank": 1,
+      "interaction_id": 7,
+      "prompt": "For better reproducibility in Parts B and C, I want to find papers from the allowed venues (2009-2012) that have official code implementations available. Can you search for SVM or GMM papers with code repositories? I prefer papers where the method can be run on CPU without GPU requirements.",
+      "why_important": "This was the most critical prompt as it directly addressed reproducibility - a major evaluation criterion. It led to discovering the Latent SSVM paper with official Cornell code, solving the concern about code obsolescence mentioned in the assignment."
+    },
+    {
+      "rank": 2,
+      "interaction_id": 3,
+      "prompt": "I found another paper from VLDB 2010 (Proceedings of the VLDB Endowment, Vol 3). The assignment lists allowed venues as 'KDD, ICDM, ICDE' for data mining. Does VLDB qualify as an allowed venue even though it's a CORE A* database conference?",
+      "why_important": "This taught me that CORE A* status alone is insufficient - venues must be explicitly listed. This understanding prevented me from selecting an invalid paper and losing marks on venue compliance."
+    },
+    {
+      "rank": 3,
+      "interaction_id": 4,
+      "prompt": "I'm considering 'Group Anomaly Detection using Flexible Genre Models' from NeurIPS 2011. It uses Monte Carlo EM for learning. Does using EM algorithm automatically satisfy the 'GMM, EM-based clustering' requirement, or does the model need to be specifically GMM-based?",
+      "why_important": "This clarified the distinction between different probabilistic model families. Understanding that topic models are not GMM variants helped me avoid selecting a paper with ambiguous method alignment."
+    },
+    {
+      "rank": 4,
+      "interaction_id": 9,
+      "prompt": "I want to finalize my selection as 'Learning Structural SVMs with Latent Variables' (ICML 2009). Can you confirm: (1) It satisfies all mandatory requirements, (2) The datasets used are publicly available, (3) The experiments can be reproduced on a standard laptop without GPU, (4) What are potential failure cases I should understand for Part C?",
+      "why_important": "This comprehensive feasibility check ensured my final selection meets all criteria. Identifying potential failure cases (CCCP local optima, initialization sensitivity) prepares me for Part C's understanding-based questions."
+    },
+    {
+      "rank": 5,
+      "interaction_id": 6,
+      "prompt": "I found a paper on 'Positive Unlabeled Learning for Time Series Classification' that I thought was from ICML 2010. Can you verify the actual venue and year, and check if it qualifies? The paper uses SVM iteratively for classification.",
+      "why_important": "This corrected a factual error (IJCAI 2011, not ICML 2010) and highlighted the importance of verifying paper metadata. Submitting incorrect venue/year would result in mark deductions for validity."
+    }
+  ],
+
+  "selected_paper": {
+    "title": "Learning Structural SVMs with Latent Variables",
+    "authors": "Chun-Nam Yu, Thorsten Joachims",
+    "venue": "ICML 2009",
+    "year": 2009,
+    "pdf_url": "https://www.cs.cornell.edu/people/tj/publications/yu_joachims_09a.pdf",
+    "code_url": "https://www.cs.cornell.edu/~cnyu/latentssvm/",
+    "method_type": "SVM (Latent Structural SVM)",
+    "why_selected": "Selected for strong reproducibility (official C code from Cornell), clear SVM-based method satisfying requirements, ICML venue explicitly allowed, CPU-only experiments feasible, and well-documented applications (motif finding, coreference resolution) with provided datasets."
+  },
+
+  "student_declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Part A.",
+    "understanding_acknowledged": true,
+    "signature": "Shivansh Gupta",
+    "date": "2026-03-01"
+  }
+}
