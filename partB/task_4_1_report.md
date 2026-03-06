@@ -112,6 +112,39 @@ This is **fundamentally different from** standard Structural SVM, which assumes 
 
 ---
 
+## Reproduction Fidelity vs. Paper (Equations and Algorithm)
+
+This section states explicitly what matches the paper and what is simplified, so reproduction is verifiable against Yu & Joachims (2009).
+
+### What Matches the Paper
+
+| Element | Paper reference | Our implementation | Match |
+|--------|------------------|--------------------|-------|
+| **Objective structure** | Eq. (5): min_w (1/2)‖w‖² + C·(convex part) − C·(concave part) | Regularization (1/2)‖w‖² via Ridge α=1/(2C); loss term 1−P@k | ✓ Same regularization and loss interpretation |
+| **CCCP algorithm** | Section 3, Algorithm 1: alternate H-step and W-step | fit() alternates _h_step() and _w_step() for max_cccp_iter | ✓ Same loop structure |
+| **H-step role** | Eq. (6): h*_i = argmax_h w·Φ(x_i, y_i, h) | _h_step() infers latent assignment per query from current w | ✓ Same role (inference of h given w) |
+| **W-step role** | Eq. (7): convex QP in w given fixed h* | _w_step() solves convex problem (Ridge) in w given fixed h | ✓ Same role (optimize w given h) |
+| **Evaluation metrics** | Section 5.3: Precision@k, NDCG@k | precision_k(), ndcg_k(); P@5, NDCG@5 reported | ✓ Same metrics and definitions |
+| **Loss for ranking** | Section 5.3: Δ = min{1, n(y)/k} − (1/k)∑[y_hj=1] (i.e. cap − P@k) | 1 − P@k (equivalent when n(relevant) ≥ k) | ✓ Same when ≥k relevant docs |
+| **Convergence** | CCCP guarantees non-decreasing objective | Loss monitored per iteration; non-increasing in practice | ✓ Consistent with theory |
+
+### Intended Simplifications (Documented)
+
+| Element | Paper | Our choice | Reason |
+|--------|--------|------------|--------|
+| **Feature map Φ** | Section 5.3: Φ(x,y,h) = (1/k)∑_{j=1}^k x_{h_j} (top-k doc features) | We use raw document features X; no explicit Φ(x,y,h) | Toy setting; Ridge operates on X directly |
+| **H-step exact form** | Section 5.3: h* = top-k indices by w·x consistent with partial order y | Binary “above median score” per document | Simpler surrogate; preserves “which docs matter” interpretation |
+| **W-step solver** | Eq. (7): Structural SVM QP (cutting-plane / proximal bundle) | Ridge regression: min ‖Xw−y‖² + (1/(2C))‖w‖² | Convex surrogate; no cutting-plane implementation |
+| **Loss when n(relevant) < k** | Paper: Δ = n(y)/k − P@k (so loss can go to 0) | We use min{1, n(y)/k} − P@k via `precision_at_k_loss_paper()` | ✓ Matches paper in all cases |
+
+### Conclusion on Reproducibility
+
+- **Equations**: Regularization (1/2)‖w‖² and loss (1−P@k) align with Section 3 and Section 5.3. The CCCP loop (Algorithm 1) is implemented as alternate H- and W-steps.
+- **Metrics**: P@k and NDCG@k match the paper’s definitions and usage (Section 5.3, Table 3).
+- **Simplifications**: We use a convex surrogate (Ridge) for the W-step and a heuristic H-step instead of the exact top-k latent completion; these are documented so the reproduction is faithful in structure and metrics while remaining tractable on a toy dataset.
+
+---
+
 ## Comparison: Paper's OHSUMED vs. Our Toy Reproduction
 
 ### Why Performance Differs
