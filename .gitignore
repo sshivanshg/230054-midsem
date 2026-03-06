@@ -1,0 +1,32 @@
+# Environment
+.venv/
+venv/
+env/
+
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*~
+
+# Internal / not required for submission (Part A & B rubrics)
+PART_A_VERIFICATION.md
+partB/COMPLETION_SUMMARY.md
+partB/SUBMISSION_CHECKLIST.md
