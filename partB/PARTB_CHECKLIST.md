@@ -29,4 +29,12 @@ Use this to verify your `partB/` folder before submission. All items must be sat
 
 ---
 
-*Last verified: Part B uses only synthetic data from partB/task_2_1.ipynb; root README no longer references PartB_LatentSVM_Ranking.ipynb or training on LETOR OHSUMED.*
+## 8. Absolute final step: submit the form
+
+Pushing to GitHub is **not** enough. You must:
+
+- [ ] Submit your **GitHub repository URL** via the official Part B Google Form:  
+  **https://forms.gle/yxfmRprmHDeAzx1C7**
+- [ ] Submit **before the deadline: 12 March 2026, 8:00 A.M.**
+
+**Important:** Commits made after the deadline timestamp may not be considered and can lead to cancellation of Part B evaluation. Verify the README (no “Training on LETOR OHSUMED” instructions), verify all items above, then submit the form.

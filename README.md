@@ -39,14 +39,10 @@ amlmidsem/
 
 ## Datasets
 
-### 1. LETOR OHSUMED Dataset (Primary - Fully Available)
+### 1. LETOR OHSUMED Dataset (reference only — not used in Part B)
 
-- **Source**: Microsoft Research LETOR benchmark
-- **Task**: Learning to rank for information retrieval
-- **Use in paper**: Optimizing Precision@k
-- **Location**: `data/letor/OHSUMED/`
-- **Format**: SVM-light format with 25 features per document-query pair
-- **Size**: 16,140 query-document pairs, 106 queries, 5-fold CV splits
+- **Part B**: The assignment **forbids** using the paper’s original dataset for evaluation. Part B uses only the **synthetic toy dataset** generated in `partB/task_2_1.ipynb`.
+- **Reference**: Microsoft Research LETOR benchmark; paper uses it for Precision@k (Section 5.3). Location in repo (if present): `data/letor/OHSUMED/`. **Do not** use for Part B training or evaluation.
 
 ### 2. Stanford OCR Dataset (Alternative for Structured Prediction)
 
@@ -90,21 +86,9 @@ cd ../latentnpcoref_v0.12
 make
 ```
 
-### 3. Run LETOR Data Loader
-
-```python
-# See data/load_letor_data.py for usage
-from data.load_letor_data import load_ohsumed_fold
-
-X_train, y_train, qid_train, X_test, y_test, qid_test = load_ohsumed_fold(1)
-```
-
 ## Completing the Project (Data, Training, Run)
 
-**No additional data download is required.** The repository already includes:
-- **OHSUMED**: `data/letor/OHSUMED/Data/Fold1`–`Fold5` (train/val/test per fold)
-- **Stanford OCR**: `data/letter.data`
-- **Motif**: `data/motif/` (e.g. `motif_all.fasta`, fold files)
+**No additional data download is required** for Part B. For other experiments the repository may contain other datasets (e.g. Stanford OCR, Motif); **Part B does not use them**.
 
 ### Part B (Mid-Sem submission: toy dataset only)
 
@@ -115,12 +99,6 @@ Part B **must not** use the paper’s original dataset (e.g. LETOR OHSUMED). All
    or run the data-generation cells in `partB/task_2_1.ipynb`. This creates `partB/data/train_data.npy`, `partB/data/test_data.npy`, and `partB/data/scaler.npy`.
 2. **Run Part B notebooks in order**: Execute `partB/task_1_1.ipynb` through `partB/task_3_2.ipynb` (all 8 task notebooks). Run `task_2_1.ipynb` first so data exists; then `task_2_2.ipynb`, `task_2_3.ipynb`, `task_3_1.ipynb`, `task_3_2.ipynb`. All use only `partB/data/` and write figures to `partB/results/`.
 3. See **partB/README.md** for the full Part B checklist (8 notebooks, 10 LLM JSONs, report.pdf, requirements.txt, data/, results/).
-
-### Verify LETOR loader (optional; not used in Part B)
-
-```bash
-python -c "from data.load_letor_data import load_ohsumed_fold; load_ohsumed_fold(1); print('OK')"
-```
 
 ## Reproduction Plan
 
@@ -150,3 +128,13 @@ python -c "from data.load_letor_data import load_ohsumed_fold; load_ohsumed_fold
 
 3. Stanford OCR Dataset: Taskar, B. et al. (2004). Max-Margin Markov Networks.
    - Download: https://ai.stanford.edu/~btaskar/ocr/
+
+---
+
+## Part B submission (mandatory)
+
+After pushing your code to GitHub, you **must** submit your repository URL via the official Part B Google Form:  
+**https://forms.gle/yxfmRprmHDeAzx1C7**
+
+**Deadline: 12 March 2026, 8:00 A.M.**  
+Any commits made after this timestamp may not be considered and can lead to cancellation of Part B evaluation. Clean up the README, verify `partB/` contents (see `partB/PARTB_CHECKLIST.md`), then submit the form.
