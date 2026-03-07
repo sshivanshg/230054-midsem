@@ -106,25 +106,17 @@ X_train, y_train, qid_train, X_test, y_test, qid_test = load_ohsumed_fold(1)
 - **Stanford OCR**: `data/letter.data`
 - **Motif**: `data/motif/` (e.g. `motif_all.fasta`, fold files)
 
-### Part B (Mid-Sem submission: toy dataset)
+### Part B (Mid-Sem submission: toy dataset only)
 
-1. **Generate toy data** (if `partB/data/train_data.npy` is missing): from repo root run  
+Part B **must not** use the paper’s original dataset (e.g. LETOR OHSUMED). All work lives in **partB/** and uses only the **synthetic toy dataset** generated there.
+
+1. **Generate toy data** (from repo root):  
    `jupyter nbconvert --to notebook --execute --inplace partB/task_2_1.ipynb`  
-   or run the data-generation cells in `partB/task_2_1.ipynb`. This creates `partB/data/{train_data.npy, test_data.npy, scaler.npy}`.
-2. **Run Part B notebooks** (from repo root): execute `partB/task_2_2.ipynb`, `task_2_3.ipynb`, `task_3_1.ipynb`, `task_3_2.ipynb` in order. All use `partB/data/` and write figures to `partB/results/`.
+   or run the data-generation cells in `partB/task_2_1.ipynb`. This creates `partB/data/train_data.npy`, `partB/data/test_data.npy`, and `partB/data/scaler.npy`.
+2. **Run Part B notebooks in order**: Execute `partB/task_1_1.ipynb` through `partB/task_3_2.ipynb` (all 8 task notebooks). Run `task_2_1.ipynb` first so data exists; then `task_2_2.ipynb`, `task_2_3.ipynb`, `task_3_1.ipynb`, `task_3_2.ipynb`. All use only `partB/data/` and write figures to `partB/results/`.
+3. See **partB/README.md** for the full Part B checklist (8 notebooks, 10 LLM JSONs, report.pdf, requirements.txt, data/, results/).
 
-### Training on real LETOR OHSUMED (5-fold)
-
-From the **repository root**:
-
-```bash
-source venv/bin/activate
-jupyter nbconvert --to notebook --execute --inplace PartB_LatentSVM_Ranking.ipynb
-```
-
-Or open `PartB_LatentSVM_Ranking.ipynb` in Jupyter and run all cells. The notebook loads `data/letor/OHSUMED/Data/Fold1`–`Fold5`, normalizes features, trains a baseline and a Latent SVM (CCCP), and reports validation/test P@5 and NDCG@5 per fold.
-
-### Verify LETOR loader
+### Verify LETOR loader (optional; not used in Part B)
 
 ```bash
 python -c "from data.load_letor_data import load_ohsumed_fold; load_ohsumed_fold(1); print('OK')"
@@ -132,10 +124,10 @@ python -c "from data.load_letor_data import load_ohsumed_fold; load_ohsumed_fold
 
 ## Reproduction Plan
 
-### Option A: Precision@k on LETOR (Recommended)
-- Use OHSUMED dataset (fully available)
-- Implement Latent Structural SVM for ranking
-- Evaluate Precision@1,3,5,10 with 5-fold CV
+### Part B (mandatory): Toy dataset only
+- **Do not** use the paper’s original dataset (e.g. LETOR OHSUMED) for Part B.
+- Generate synthetic data in `partB/task_2_1.ipynb` and use it in tasks 2.2, 2.3, 3.1, 3.2.
+- Implement Latent Structural SVM for ranking and evaluate NDCG@5, P@5, MAP on the toy split.
 
 ### Option B: Sequence Labeling on OCR
 - Use Stanford OCR dataset (fully available)
