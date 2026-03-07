@@ -1,21 +1,47 @@
 {
-  "task": "3.1",
-  "task_name": "Two-Component Ablation Study",
-  "task_tag": "Task 3.1",
-  "date": "2026-03-07",
-  "interaction_type": "notebook_generation",
-  "model_used": "",
-  "prompt_summary": "",
-  "interaction_details": {},
-  "disclosure_statement": "",
-  "code_used_verbatim": false,
-  "student_modification": "",
-  "top_5_prompts": [],
-  "declaration": {
-    "student_name": "",
-    "student_rollnumber": "",
-    "declaration_text": "",
-    "signature_placeholder": "",
-    "date": ""
+  "student_metadata": {
+    "name": "Shivansh Gupta",
+    "roll_number": "230054",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part B",
+    "submission_date": "2026-03-07"
+  },
+  "llm_tools_used": [
+    {
+      "tool_name": "Cursor",
+      "model": "Claude-3.5-Sonnet",
+      "provider": "Anthropic"
+    }
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "date": "2026-03-07",
+      "tool_name": "Cursor",
+      "model": "Claude-3.5-Sonnet",
+      "task_tag": "Task 3.1",
+      "purpose": "Designing two-component ablation (fixed h and 0-1 loss)",
+      "prompt": "What are two distinct ablations: (1) skip CCCP and use fixed h, (2) use 0-1 loss instead of Precision@k loss? How do I implement and compare them?",
+      "llm_response_used": "Yes",
+      "code_used_verbatim": false,
+      "student_modification": "",
+      "how_it_helped": "Defined the two ablations and comparison structure.",
+      "student_verification": "Checked against rubric requirement for two distinct components.",
+      "confidence_level": 5
+    }
+  ],
+  "top_5_prompts": [
+    { "rank": 1, "interaction_id": 1, "prompt": "What happens if I skip the CCCP loop and use a fixed heuristic for h (Ablation 1)?", "why_important": "First ablation component." },
+    { "rank": 2, "interaction_id": 1, "prompt": "What happens if I use a standard 0-1 loss instead of the custom Precision@k loss (Ablation 2)?", "why_important": "Second ablation component." },
+    { "rank": 3, "interaction_id": 1, "prompt": "How do I implement two distinct ablations for the Latent Structural SVM in task_3_1?", "why_important": "Implementation structure." },
+    { "rank": 4, "interaction_id": 1, "prompt": "Where should I save the ablation comparison plot (partB/results/)?", "why_important": "Plots saved to results/." },
+    { "rank": 5, "interaction_id": 1, "prompt": "What does removing the CCCP loop vs removing the P@k loss reveal about the method?", "why_important": "Interpretation of ablation findings." }
+  ],
+  "student_declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Part B.",
+    "understanding_acknowledged": true,
+    "signature": "Shivansh Gupta",
+    "date": "2026-03-07"
   }
 }

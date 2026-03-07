@@ -39,10 +39,9 @@ amlmidsem/
 
 ## Datasets
 
-### 1. LETOR OHSUMED Dataset (reference only — not used in Part B)
+### Part B (mandatory): Synthetic toy dataset only
 
-- **Part B**: The assignment **forbids** using the paper’s original dataset for evaluation. Part B uses only the **synthetic toy dataset** generated in `partB/task_2_1.ipynb`.
-- **Reference**: Microsoft Research LETOR benchmark; paper uses it for Precision@k (Section 5.3). Location in repo (if present): `data/letor/OHSUMED/`. **Do not** use for Part B training or evaluation.
+Part B uses **only** the **synthetic toy dataset** generated in `partB/task_2_1.ipynb` (saved under `partB/data/`). Do not use the paper’s original dataset (e.g. LETOR OHSUMED) for any Part B training or evaluation. See `partB/data/README.md` for how the toy data is obtained and used.
 
 ### 2. Stanford OCR Dataset (Alternative for Structured Prediction)
 

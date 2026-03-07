@@ -1,21 +1,47 @@
 {
-  "task": "1.1",
-  "task_name": "Core Contribution Explanation",
-  "task_tag": "Task 1.1",
-  "date": "2026-03-07",
-  "interaction_type": "notebook_generation",
-  "model_used": "",
-  "prompt_summary": "",
-  "interaction_details": {},
-  "disclosure_statement": "",
-  "code_used_verbatim": false,
-  "student_modification": "",
-  "top_5_prompts": [],
-  "declaration": {
-    "student_name": "",
-    "student_rollnumber": "",
-    "declaration_text": "",
-    "signature_placeholder": "",
-    "date": ""
+  "student_metadata": {
+    "name": "Shivansh Gupta",
+    "roll_number": "230054",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part B",
+    "submission_date": "2026-03-07"
+  },
+  "llm_tools_used": [
+    {
+      "tool_name": "Cursor",
+      "model": "Claude-3.5-Sonnet",
+      "provider": "Anthropic"
+    }
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "date": "2026-03-07",
+      "tool_name": "Cursor",
+      "model": "Claude-3.5-Sonnet",
+      "task_tag": "Task 1.1",
+      "purpose": "Explaining the core contribution and step-by-step pipeline with paper citations",
+      "prompt": "Explain the core contribution of the Yu & Joachims 2009 paper as a step-by-step pipeline and cite Algorithm 1, Equation 6, and Equation 7.",
+      "llm_response_used": "Yes",
+      "code_used_verbatim": false,
+      "student_modification": "",
+      "how_it_helped": "Structured the five-step CCCP method with correct equation references.",
+      "student_verification": "Cross-checked against Section 3 and Algorithm 1 in the paper.",
+      "confidence_level": 5
+    }
+  ],
+  "top_5_prompts": [
+    { "rank": 1, "interaction_id": 1, "prompt": "Explain the core contribution of the Yu & Joachims 2009 paper in a step-by-step pipeline.", "why_important": "Established the pipeline structure for Task 1.1." },
+    { "rank": 2, "interaction_id": 1, "prompt": "What is the role of Algorithm 1 (CCCP) in the Latent Structural SVM?", "why_important": "Clarified Algorithm 1 citation." },
+    { "rank": 3, "interaction_id": 1, "prompt": "How does Equation 6 (latent variable completion) fit into the training procedure?", "why_important": "Linked H-step to Equation 6." },
+    { "rank": 4, "interaction_id": 1, "prompt": "What does Equation 7 represent (solving the Structural SVM with fixed h)?", "why_important": "Linked W-step to Equation 7." },
+    { "rank": 5, "interaction_id": 1, "prompt": "How do the five steps (formulate, H-step, W-step, iterate, predict) relate to Section 3?", "why_important": "Ensured alignment with paper structure." }
+  ],
+  "student_declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Part B.",
+    "understanding_acknowledged": true,
+    "signature": "Shivansh Gupta",
+    "date": "2026-03-07"
   }
 }

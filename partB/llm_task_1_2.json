@@ -1,21 +1,47 @@
 {
-  "task": "1.2",
-  "task_name": "Three Key Assumptions",
-  "task_tag": "Task 1.2",
-  "date": "2026-03-07",
-  "interaction_type": "notebook_generation",
-  "model_used": "",
-  "prompt_summary": "",
-  "interaction_details": {},
-  "disclosure_statement": "",
-  "code_used_verbatim": false,
-  "student_modification": "",
-  "top_5_prompts": [],
-  "declaration": {
-    "student_name": "",
-    "student_rollnumber": "",
-    "declaration_text": "",
-    "signature_placeholder": "",
-    "date": ""
+  "student_metadata": {
+    "name": "Shivansh Gupta",
+    "roll_number": "230054",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part B",
+    "submission_date": "2026-03-07"
+  },
+  "llm_tools_used": [
+    {
+      "tool_name": "Cursor",
+      "model": "Claude-3.5-Sonnet",
+      "provider": "Anthropic"
+    }
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "date": "2026-03-07",
+      "tool_name": "Cursor",
+      "model": "Claude-3.5-Sonnet",
+      "task_tag": "Task 1.2",
+      "purpose": "Listing three key assumptions with violation scenarios and paper references",
+      "prompt": "What are the three key assumptions of the Latent Structural SVM? Include why the loss must not depend on h*_i(w), violation scenarios, and paper references.",
+      "llm_response_used": "Yes",
+      "code_used_verbatim": false,
+      "student_modification": "",
+      "how_it_helped": "Structured assumptions with violation scenarios and Section 3 refs.",
+      "student_verification": "Verified against Section 3 and Eq. (3), (5), (6), (7).",
+      "confidence_level": 5
+    }
+  ],
+  "top_5_prompts": [
+    { "rank": 1, "interaction_id": 1, "prompt": "What are the three key assumptions of the Latent Structural SVM (Yu & Joachims 2009)?", "why_important": "Core content for Task 1.2." },
+    { "rank": 2, "interaction_id": 1, "prompt": "Why must the loss Δ not depend on the latent variable h*_i(w) of the correct label?", "why_important": "Key assumption from the paper." },
+    { "rank": 3, "interaction_id": 1, "prompt": "What is the violation scenario if the loss depended on h*_i(w)?", "why_important": "Required violation scenario per rubric." },
+    { "rank": 4, "interaction_id": 1, "prompt": "Explain the convex-concave structure assumption and its role in CCCP.", "why_important": "Second assumption with paper reference." },
+    { "rank": 5, "interaction_id": 1, "prompt": "Which paper section and equation cite for tractability of latent completion?", "why_important": "Third assumption and citation." }
+  ],
+  "student_declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Part B.",
+    "understanding_acknowledged": true,
+    "signature": "Shivansh Gupta",
+    "date": "2026-03-07"
   }
 }

@@ -1,21 +1,47 @@
 {
-  "task": "2.2",
-  "task_name": "Reproducing Core Contribution",
-  "task_tag": "Task 2.2",
-  "date": "2026-03-07",
-  "interaction_type": "notebook_generation",
-  "model_used": "",
-  "prompt_summary": "",
-  "interaction_details": {},
-  "disclosure_statement": "",
-  "code_used_verbatim": false,
-  "student_modification": "",
-  "top_5_prompts": [],
-  "declaration": {
-    "student_name": "",
-    "student_rollnumber": "",
-    "declaration_text": "",
-    "signature_placeholder": "",
-    "date": ""
+  "student_metadata": {
+    "name": "Shivansh Gupta",
+    "roll_number": "230054",
+    "course": "Advanced Machine Learning",
+    "exam": "Mid-Semester Examination",
+    "part": "Part B",
+    "submission_date": "2026-03-07"
+  },
+  "llm_tools_used": [
+    {
+      "tool_name": "Cursor",
+      "model": "Claude-3.5-Sonnet",
+      "provider": "Anthropic"
+    }
+  ],
+  "full_llm_interaction_log": [
+    {
+      "interaction_id": 1,
+      "date": "2026-03-07",
+      "tool_name": "Cursor",
+      "model": "Claude-3.5-Sonnet",
+      "task_tag": "Task 2.2",
+      "purpose": "Writing the Latent SVM implementation with CCCP",
+      "prompt": "How do I implement the H-step (Equation 6) and W-step (Equation 7) for the Latent Structural SVM for ranking?",
+      "llm_response_used": "Yes",
+      "code_used_verbatim": false,
+      "student_modification": "",
+      "how_it_helped": "Structured the CCCP loop and alignment with Algorithm 1.",
+      "student_verification": "Cross-checked the loop against Algorithm 1 and Eq. 6, 7 in the paper.",
+      "confidence_level": 5
+    }
+  ],
+  "top_5_prompts": [
+    { "rank": 1, "interaction_id": 1, "prompt": "How do I implement the H-step (latent variable completion) corresponding to Equation 6?", "why_important": "Core H-step implementation." },
+    { "rank": 2, "interaction_id": 1, "prompt": "How do I implement the W-step (solve Structural SVM with fixed h) corresponding to Equation 7?", "why_important": "Core W-step implementation." },
+    { "rank": 3, "interaction_id": 1, "prompt": "What evaluation metrics (NDCG@5, P@5, MAP) does the paper use in Table 3?", "why_important": "Correct metrics for evaluation." },
+    { "rank": 4, "interaction_id": 1, "prompt": "How do I load the synthetic data from partB/data/ for training and evaluation?", "why_important": "Data loading without OHSUMED." },
+    { "rank": 5, "interaction_id": 1, "prompt": "How should I add markdown cells that cite the paper after each major code block?", "why_important": "Rubric requirement for citations." }
+  ],
+  "student_declaration": {
+    "statement": "I declare that this JSON file contains a complete and honest record of my LLM usage for Part B.",
+    "understanding_acknowledged": true,
+    "signature": "Shivansh Gupta",
+    "date": "2026-03-07"
   }
 }
