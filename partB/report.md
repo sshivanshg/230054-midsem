@@ -38,3 +38,6 @@ In `task_3_2.ipynb` we summarized a central **failure mode** described in the pa
 
 ## 5. Reflection
 
+Reflecting on this mid-sem project, the biggest hurdle was trying to demonstrate the true power of Latent Structural SVMs using just a small synthetic dataset. Because I couldn't implement the method on the massive LETOR OHSUMED dataset due to the exam's CPU and toy-data constraints, my synthetic data (with just 20 queries) simply didn't have the deep 'hidden structures' that the CCCP algorithm is designed to uncover, so I couldn't replicate the impressive 5-15% performance jumps reported in the paper. However, what honestly surprised me the most was how elegant yet fragile the CCCP algorithm actually is. The alternating math between the H-step and W-step makes perfect sense, but as I saw in my failure mode analysis, if you take away the regularization parameter (*C*), the whole thing instantly overfits to the latent guesses and breaks down into a feedback loop. If I had more time, I would love to test this on a real-world dataset to see the model actually discover meaningful latent variables, and I would definitely set up a proper cross-validation pipeline to tune the regularization *C* rather than just relying on default values  
+
+
